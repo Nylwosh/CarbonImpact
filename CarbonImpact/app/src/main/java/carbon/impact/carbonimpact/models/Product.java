@@ -1,9 +1,14 @@
 package carbon.impact.carbonimpact.models;
 
-import carbon.impact.carbonimpact.db.DBHelper;
-
+/**
+ * Product element
+ */
 public class Product {
 
+    // ID of the product (inside the database)
+    private long id;
+    // Timestamp of the last time the product has been update in the database
+    private String lastUpdate;
     // Name of the product
     private String name;
     // Category describing the type of the product (transport, food...)
@@ -11,20 +16,28 @@ public class Product {
     // Unit used to count the products
     private String unit;
     // Carbon cost by unit
-    private float costByUnit;
+    private float carbonCostByUnit;
 
-    // Database helper
-    protected static DBHelper dbHelper;
+    // Empty constructor
+    public Product(){
+        this.id = -1;
+        this.carbonCostByUnit = -1;
+    }
 
-    // Constructor
-    public Product(String name, String category, String unit, float costByUnit){
+    // Constructor with elements
+    public Product(String name, String category, String unit, float carbonCostByUnit){
+        this.id = -1;
+        this.lastUpdate = null;
+
         this.name = name;
         this.category = category;
         this.unit = unit;
-        this.costByUnit = costByUnit;
+        this.carbonCostByUnit = carbonCostByUnit;
     }
 
     // Getters
+    public long getID(){ return this.id; }
+    public String getLastUpdate(){ return this.lastUpdate; } // TODO: deal with a Timestamp
     public String getName(){ return this.name; }
     public String getCategory(){
         return this.category;
@@ -32,11 +45,13 @@ public class Product {
     public String getUnit(){
         return this.unit;
     }
-    public float getCostByUnit(){
-        return this.costByUnit;
+    public float getCarbonCostByUnit(){
+        return this.carbonCostByUnit;
     }
 
     // Setters
+    public void setId(long id) { this.id = id; }
+    public void setLastUpdate(String lastUpdate) { this.lastUpdate = lastUpdate; }
     public void setName(String name){
         this.name = name;
     }
@@ -46,17 +61,7 @@ public class Product {
     public void setUnit(String unit){
         this.unit = unit;
     }
-    public void setCostByUnit(float costByUnit){
-        this.costByUnit = costByUnit;
-    }
-
-    // Database
-    public void dbPutProduct(){
-        dbHelper.putProduct(this);
-        // TODO: handle the returned product?
-    }
-
-    public String getProductId(){
-        dbHelper.getProductId(this);
+    public void setCarbonCostByUnit(float carbonCostByUnit){
+        this.carbonCostByUnit = carbonCostByUnit;
     }
 }
