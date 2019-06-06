@@ -9,7 +9,7 @@ Puis tu crées une nouvelle branche avec le nom souhaité
 git checkout -b test
 ```
 !["Branch creation"](images/branch_creation.PNG)
-```
+
 Tu remarqueras qu'après cette commande, tu te retrouves dans ta nouvelle branche. Il en existe une autre qui crées juste la branche, mais je te mets celle-là car souvent, quand tu crées une branche, c'est que tu vas l'utiliser juste après.
 
 Après, tu peux faire toutes les modifications que tu souhaites, puis tes commits et tes push, comme sur master.
