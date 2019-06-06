@@ -20,6 +20,9 @@ git checkout develop
 ```
 
 ## 2] Import du projet dans Android Studio
+
+**/!\ NB :** Il faut cliquer sur ce qui est en orange, donc "Import project [...]" !
+
 !["Step 1"](images/import_project_1.png)
 
 !["Step 2"](images/import_project_2.png)
