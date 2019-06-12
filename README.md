@@ -6,11 +6,20 @@
     |   |   ├── src  
     |   |   |   ├── main (contains the source code)  
     |   |   |   |   ├── AndroidManifest.xml (is the Manifest file, which namely presents the permission and features restriction of the application [4](https://developer.android.com/guide/topics/manifest/manifest-intro))  
-    |   |   |   |   ├── java/carbon/impact/carbonimpact (stores the Java classes of the application)  
+    |   |   |   |   ├── java/carbon/impact/carbonimpact (stores the Java classes of the application)
+    |   |   |   |   |   ├── db (is the folder containing the classes to interact with the database)
+    |   |   |   |   |   |   ├── DBHelper.java (creates and deletes the tables)
+    |   |   |   |   |   |   └── DBProductController.java (contains the creation/Reading/Update/Deletion operations for the Product table)
+    |   |   |   |   |   ├── listeners (is the folder containing the listeners used in the different activities)
+    |   |   |   |   |   |   └── MainActivityListenerOnClick.java (is the listener for the submit button of the new product form)
+    |   |   |   |   |   ├── models (is the folder containing the different "objects" descriptions we will use in the application)
+    |   |   |   |   |   |   └── Product.java (describes the entity "Product")
+    |   |   |   |   |   └── MainActivity.java (is the main activity)
     |   |   |   |   └── res (is the resources folder of the application)  
     |   |   |   |       ├── <drawable folders> (store the image files regarding the device's dpi/orientation/version/etc)  
     |   |   |   |       ├── <mipmap folders> (store the app's icons regarding the device's dpi ("mdpi" is approximately "160 dpi", "hdpi" is approximately "240 dpi", "xhdpi" is approximately "320 dpi", etc))  
-    |   |   |   |       ├── layout (stores the XML files describing the views' content)  
+    |   |   |   |       ├── layout (stores the XML files describing the views' content)
+    |   |   |   |       |   └── activity_main.xml (The layout file for the main activity)
     |   |   |   |       ├── menu (stores the XML files describing the menus' content)  
     |   |   |   |       ├── raw (stores raw files (such as musics or HTML files))  
     |   |   |   |       └── values (stores the other ressources (such as Strings))  
@@ -24,6 +33,9 @@
 
 ## Used tools
 * Android Studio [[5]](https://developer.android.com/studio)
+
+## Commit
+* [337fda8](https://github.com/Nylwosh/CarbonImpact/commit/337fda823e89f4ac49ac90dca3f6d19c465b46f9): The user can use a form to add a new product.
 
 ## References
 * [1] Gradle - https://gradle.org/
