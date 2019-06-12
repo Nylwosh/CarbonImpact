@@ -6,13 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- As it is "vertical", this layout will dispose
+         its children above and below each others.
+     -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a Product"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <!-- Name of the Product -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"/>
+
+            <!-- Value -->
+            <EditText
+                android:id="@+id/input_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Please enter the product name"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <!-- Category of the product -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category:" />
+
+            <!-- Value -->
+            <EditText
+                android:id="@+id/input_product_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Please enter the product category"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <!-- Type of unit of the product -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unit:" />
+
+            <!-- Value -->
+            <EditText
+                android:id="@+id/input_product_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Please enter product unit"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carbon cost per unit:" />
+
+            <!-- Value -->
+            <EditText
+                android:id="@+id/input_product_carbon_cost_per_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Please enter the carbon cost per unit"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <!-- Submit form -->
+        <Button
+            android:id="@+id/submit_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create the product" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
