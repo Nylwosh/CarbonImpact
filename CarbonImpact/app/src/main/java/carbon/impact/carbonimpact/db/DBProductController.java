@@ -72,6 +72,43 @@ public class DBProductController extends DBHelper{
     }
 
     /**
+     * Inserts a new product in the Product table of the database.
+     *
+     * @param name  The name of the new product to add
+     * @param category  The category of the new product to add
+     * @param unit  The unit of the new product to add
+     * @param carbonCostPerUnit The carbon cost per unit of the new product to add
+     * @return Whether or not the product has been well inserted
+     */
+    public boolean createProduct(String name, String category, String unit, float carbonCostPerUnit){
+        ContentValues values = new ContentValues();
+        // Last update of the product
+        values.put("last_update", new Timestamp(new Date().getTime()).toString());
+        // Name of the product
+        values.put("name", name);
+        // Category of the Product
+        values.put("category", category);
+        // Unit in which the product is counted
+        values.put("unit", unit);
+        // Carbon cost by unit of the product
+        values.put("carbon_cost_by_unit", carbonCostPerUnit);
+
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            db.insertOrThrow("Product", //table
+                    null, // nullColumnHack,
+                    values); // values
+            db.close();
+
+            return true; // The product has been correctly inserted into the database
+
+            // If an error occurred
+        } catch (SQLException sqlException){
+            return false; // The product has not been correctly inserted into the database
+        }
+    }
+
+    /**
      * Gets the number of products inserted into the database.
      *
      * @return  The number of products inserted into the database

@@ -36,6 +36,7 @@
 
             <!-- Value -->
             <EditText
+                android:id="@+id/input_product_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Please enter the product name"
@@ -56,6 +57,7 @@
 
             <!-- Value -->
             <EditText
+                android:id="@+id/input_product_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Please enter the product category"
@@ -76,6 +78,7 @@
 
             <!-- Value -->
             <EditText
+                android:id="@+id/input_product_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Please enter product unit"
@@ -94,6 +97,7 @@
 
             <!-- Value -->
             <EditText
+                android:id="@+id/input_product_carbon_cost_per_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Please enter the carbon cost per unit"
@@ -102,6 +106,7 @@
 
         <!-- Submit form -->
         <Button
+            android:id="@+id/submit_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Create the product" />
