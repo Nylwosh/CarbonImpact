@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         EditText inputCarbonCostPerUnit = findViewById(R.id.input_product_carbon_cost_per_unit);
         Button submitProduct = findViewById(R.id.submit_product);
 
-        // Instanciate the submit button listener
+        // Instantiate the submit button listener
         MainActivityListenerOnClick onClickSubmitListener = new MainActivityListenerOnClick(this,
                 inputName, inputCategory, inputUnit, inputCarbonCostPerUnit);
 
